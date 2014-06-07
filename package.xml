@@ -3,7 +3,7 @@
   <name>grasping_msgs</name>
   <version>0.3.0</version>
   <description>
-    Grasping related messages
+    Messages for describing objects and how to grasp them.
   </description>
   <author>Michael Ferguson</author>
   <maintainer email="fergs@unboundedrobotics.com">Michael Ferguson</maintainer>
