@@ -2,8 +2,8 @@
 Changelog for package grasping_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.1 (2014-11-02)
+------------------
 * update email
 * update description in package.xml
 * Contributors: Michael Ferguson
