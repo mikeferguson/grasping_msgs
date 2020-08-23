@@ -1,37 +1,34 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(grasping_msgs)
 
-find_package(catkin REQUIRED
-  COMPONENTS
-    actionlib
-    geometry_msgs
-    message_generation
-    moveit_msgs
-    sensor_msgs
-    shape_msgs
-)
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
 
-link_directories(${catkin_LIBRARY_DIRS}})
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
-add_action_files(
-  FILES
-    FindGraspableObjects.action
-    GraspPlanning.action
-)
+find_package(ament_cmake REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(moveit_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(shape_msgs REQUIRED)
 
-add_message_files(
-  FILES
-    GraspableObject.msg
-    Object.msg
-    ObjectProperty.msg
-)
-
-generate_messages(DEPENDENCIES geometry_msgs moveit_msgs sensor_msgs shape_msgs)
-
-catkin_package(
-  CATKIN_DEPENDS
+rosidl_generate_interfaces(
+  ${PROJECT_NAME}
+    "action/FindGraspableObjects.action"
+    "action/GraspPlanning.action"
+    "msg/GraspableObject.msg"
+    "msg/Object.msg"
+    "msg/ObjectProperty.msg"
+  DEPENDENCIES
     geometry_msgs
     moveit_msgs
     sensor_msgs
     shape_msgs
 )
+
+ament_export_dependencies(rosidl_default_runtime)
+ament_package()
