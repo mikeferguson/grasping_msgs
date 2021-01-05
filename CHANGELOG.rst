@@ -2,6 +2,11 @@
 Changelog for package grasping_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* initial port to ROS2
+* Contributors: Michael Ferguson
+
 0.3.1 (2014-11-02)
 ------------------
 * update email
