@@ -2,8 +2,8 @@
 Changelog for package grasping_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.0 (2024-09-26)
+------------------
 * Missing dependency (on std_msgs) (`#4 <https://github.com/mikeferguson/grasping_msgs/issues/4>`_)
   msg/Object.msg depends on std_msgs but it's missing in the dependency chain.
 * add license and readme files
